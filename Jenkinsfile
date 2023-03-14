@@ -4,7 +4,9 @@ pipeline {
   environment {
     Docker_Image_Name = 'athithyanac/app'
   }
-  
+  options{
+    timestamps()
+  }
   stages {
     stage('Pre-checks') {
       parallel {     
