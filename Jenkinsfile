@@ -3,32 +3,21 @@ pipeline {
 
   environment {
     Docker_Image_Name = 'athithyanac/app'
-
   }
   
   stages {
     parallel {
-      stage('Pre-Checks') {
+      
         stage('Git Verify') {
           steps {
             sh 'git --version'
-            }
-          }   
+          }
+        }   
       stage('Docker Verify') {
         steps {
           sh 'docker --version'
-          }
-        }
-      }
-    stage('Git Verify') {
-      steps {
-        sh 'git --version'
-      }
-    }
-    stage('Docker Verify') {
-      steps {
-        sh 'docker --version'
-      }
+         }
+       }
     }
     stage('Docker build') {
       steps {
@@ -37,4 +26,5 @@ pipeline {
     } 
   }
 }
+
   
