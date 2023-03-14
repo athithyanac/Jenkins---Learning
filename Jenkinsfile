@@ -6,7 +6,7 @@ pipeline {
   }
   options{
     timestamps()
-    buildDiscarder(logRotator(numTKeepStr:'2'))
+    buildDiscarder(logRotator(numToKeepStr:'2'))
   }
   stages {
     stage('Pre-checks') {
